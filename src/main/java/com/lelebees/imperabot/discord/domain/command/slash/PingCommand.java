@@ -30,6 +30,8 @@ public class PingCommand implements SlashCommand {
     }
 
     @Override
+    logger.info("User " + id.asLong() + " (" + event.getInteraction().getUser().getUsername() + ") used /ping");
+    
     public Mono<Void> handle(ChatInputInteractionEvent event) {
         return event.reply()
                 .withContent("Pong!");
